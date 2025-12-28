@@ -6,6 +6,7 @@ Tested:
 */
 
 // Indexed from 1
+// Supports Range Update Point Get
 struct FenwickTree{
     int n;
     vector<int> fen;
@@ -14,7 +15,7 @@ struct FenwickTree{
     }
  
     FenwickTree(int _n) : n(_n) {
-        fen.resize(n + 5);
+        fen.resize(n + 5, 0);
     }
  
     void update(int idx, int val) {
