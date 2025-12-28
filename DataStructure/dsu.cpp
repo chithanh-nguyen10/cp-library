@@ -3,6 +3,7 @@ Tested:
 - CSES 1676: https://cses.fi/problemset/task/1676
 */
 
+// Indexed from 1
 struct DSU{
     int n;
     vector<int> par, sz;
