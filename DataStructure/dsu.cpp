@@ -4,6 +4,7 @@ Tested:
 */
 
 // Indexed from 1
+// Remove union by size if the root matters
 struct DSU{
     int n;
     vector<int> par, sz;
@@ -20,7 +21,6 @@ struct DSU{
     bool unite(int x, int y) {
         x = findSet(x); y = findSet(y);
         if (x == y) return 0;
-        // Remove union by size if the root matters
         if (sz[x] < sz[y]) swap(x, y);
  
         sz[x] += sz[y];
