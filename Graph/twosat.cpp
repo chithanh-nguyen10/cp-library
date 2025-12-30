@@ -1,4 +1,5 @@
 /*
+Name: 2-SAT
 Tested:
 - CSES 1684: https://cses.fi/problemset/task/1684
 - Yosupo 2 Sat: https://judge.yosupo.jp/problem/two_sat
