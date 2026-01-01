@@ -1,3 +1,10 @@
+/*
+Name: Max Flow using Dinic
+Tested:
+- CSES 1694: https://cses.fi/problemset/task/1694
+*/
+
+// Indexed from 1
 struct DinicFlow{
     static const long long INF = (long long)1e18 + 7;
     int n, m;
