@@ -5,7 +5,9 @@ namespace math {
         int v;
 
         Modint() : v(0) {}
-        Modint(int _v) : v(_v) {}
+        Modint(int _v) : v(_v) {
+            if (v >= mod) v %= mod;
+        }
         Modint& operator += (const Modint &other) {
             v += other.v;
             if (v >= mod) v -= mod;
@@ -23,7 +25,7 @@ namespace math {
             return *this;
         }
 
-        Modint pow(int k) const {
+        Modint pow(long long k) const {
             Modint res(1), base = *this;
             while (k) {
                 if (k & 1) res *= base;
@@ -47,6 +49,10 @@ namespace math {
         friend Modint operator / (Modint a, const Modint &b) {return a /= b;}
 
         Modint operator - () const {return Modint(0) - *this;}
+
+        friend istream& operator >> (istream &stream, Modint &other) {
+            return stream >> other.v;
+        } 
 
         friend ostream& operator << (ostream &stream, const Modint &other) {
             return stream << other.v;
