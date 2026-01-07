@@ -2,16 +2,17 @@
 Name: Max Flow LMH
 Tested:
 - CSES 1694: https://cses.fi/problemset/task/1694
+- CSES 1695: https://cses.fi/problemset/submit/1695/
 - https://oj.vnoi.info/problem/fflow
 - https://judge.yosupo.jp/problem/bipartitematching
 */
 
 // Indexed from 0, directed
 // Usage:
-// MaxFlow flow(n);
+// MaxFlowLMH flow(n);
 // Add edge u->v with capacity c: flow.addEdge(u, v, c)
-// Result = flow.getFlow(s, t)
-struct MaxFlow {
+// Result = flow.maxflow(s, t)
+struct MaxFlowLMH {
     struct Edge {
         int u, v, c, f;
         int next;
@@ -22,7 +23,7 @@ struct MaxFlow {
     vector<int> head, current, h, avail;
     vector<long long> excess;
 
-    MaxFlow(int n) : n(n), head(n, -1), current(n, -1), h(n), avail(n), excess(n) {
+    MaxFlowLMH(int n) : n(n), head(n, -1), current(n, -1), h(n), avail(n), excess(n) {
         edges.clear();
     }
 
@@ -34,7 +35,7 @@ struct MaxFlow {
         return v == u ? head[u] - 1 : head[u];
     }
 
-    long long getFlow(int _s, int _t) {
+    long long maxflow(int _s, int _t) {
         s = _s; t = _t;
         init();
 
@@ -76,8 +77,15 @@ struct MaxFlow {
             }
             now = 1 - now;
         }
+
         return excess[t];
     }
+
+    // Get flow of the edge id
+    int getFlow(int id) const {return edges[id].f;}
+
+    // For min-cut trace
+    bool visited(int u) const {return avail[u];}
 
 private:
     void init() {
@@ -136,5 +144,24 @@ private:
             }
         }
         for (int x = 0; x < n; ++x) current[x] = head[x];
+    }
+
+    // Call this for min-cut trace
+    void computeVisited () {
+        for (int i = 0; i < n; ++i) avail[i] = 0;
+        queue<int> q;
+        q.push(s);
+        avail[s] = 1;
+
+        while (!q.empty()) {
+            int u = q.front(); q.pop();
+            for (int p = head[u]; p >= 0; p = edges[p].next) {
+                int v = edges[p].v;
+                if (!avail[v] && edges[p].f < edges[p].c) {
+                    avail[v] = 1;
+                    q.push(v);
+                }
+            }
+        }
     }
 };
