@@ -2,7 +2,8 @@
 Name: Max Flow using Dinic
 Tested:
 - CSES 1694: https://cses.fi/problemset/task/1694
-- 
+- CSES 1695: https://cses.fi/problemset/submit/1695/
+- https://judge.yosupo.jp/problem/bipartitematching
 */
 
 // Indexed from 1, directed
