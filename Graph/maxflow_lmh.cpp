@@ -7,6 +7,7 @@ Tested:
 - https://judge.yosupo.jp/problem/bipartitematching
 */
 
+// NOTE!!!!!! Only use when the time limit is tight because of long implementation
 // Indexed from 0, directed
 // Usage:
 // MaxFlowLMH flow(n);
