@@ -1,5 +1,5 @@
 /*
-Name: Max Flow LMH
+Name: Max Flow Lee Min Ho
 Tested:
 - CSES 1694: https://cses.fi/problemset/task/1694
 - CSES 1695: https://cses.fi/problemset/submit/1695/
