@@ -4,7 +4,11 @@ Tested:
 - CSES 1694: https://cses.fi/problemset/task/1694
 */
 
-// Indexed from 1
+// Indexed from 1, directed
+// Usage:
+// DinicFlow flow(n);
+// Add edge u->v with capacity c: flow.addEdge(u, v, c)
+// Result = flow.maxflow(s, t)
 struct DinicFlow{
     static const long long INF = (long long)1e18 + 7;
     int n, m;
