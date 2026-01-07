@@ -19,7 +19,8 @@ struct DinicFlow{
     DinicFlow (int _n) : n(_n), m(0), dist(n + 5, 0), head(n + 5, -1), work(n + 5, 0) {
  
     }
- 
+
+    // Returns the id of the edge
     int addEdge(int u, int v, int cap) {
         int ret = m;
         point.push_back(v); capa.push_back(cap); flow.push_back(0);
@@ -75,4 +76,11 @@ struct DinicFlow{
  
         return res;
     }
+
+    // Get flow of the edge id
+    int getFlow(int id) const {return flow[id];}
+
+    // For min-cut trace
+    // A min-cut edge from a visited to an unvisited vertex.
+    bool visited(int u) const {return dist[u] >= 0;}
 };
