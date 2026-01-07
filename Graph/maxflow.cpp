@@ -2,6 +2,7 @@
 Name: Max Flow using Dinic
 Tested:
 - CSES 1694: https://cses.fi/problemset/task/1694
+- 
 */
 
 // Indexed from 1, directed
@@ -19,11 +20,13 @@ struct DinicFlow{
  
     }
  
-    void addEdge(int u, int v, int cap) {
+    int addEdge(int u, int v, int cap) {
+        int ret = m;
         point.push_back(v); capa.push_back(cap); flow.push_back(0);
         nxt.push_back(head[u]); head[u] = m++; 
         point.push_back(u); capa.push_back(0); flow.push_back(0);
         nxt.push_back(head[v]); head[v] = m++; 
+        return ret;
     }
  
     bool bfs(int s, int t) {
