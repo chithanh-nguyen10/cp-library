@@ -2,7 +2,7 @@
 Name: Max Flow Lee Min Ho
 Tested:
 - CSES 1694: https://cses.fi/problemset/task/1694
-- CSES 1695: https://cses.fi/problemset/submit/1695/
+- CSES 1695: https://cses.fi/problemset/task/1695/
 - https://oj.vnoi.info/problem/fflow
 - https://judge.yosupo.jp/problem/bipartitematching
 */
