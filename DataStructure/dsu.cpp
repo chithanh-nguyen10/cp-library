@@ -16,7 +16,9 @@ struct DSU{
     }
  
     int findSet(int x) {
-        return (x == par[x] ? x : par[x] = findSet(par[x]));
+        while (x != par[x])
+            x = par[x] = par[par[x]];
+        return x;
     }
  
     bool unite(int x, int y) {
