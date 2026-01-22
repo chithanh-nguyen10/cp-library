@@ -5,8 +5,8 @@ namespace math {
         int v;
 
         Modint() : v(0) {}
-        Modint(int _v) : v(_v) {
-            if (v >= mod) v %= mod;
+        Modint(int _v) : v(_v % mod) {
+            if (v < 0) v += mod;
         }
         Modint& operator += (const Modint &other) {
             v += other.v;
@@ -50,6 +50,10 @@ namespace math {
 
         Modint operator - () const {return Modint(0) - *this;}
 
+        bool operator == (const Modint &t) const {return v == t.v;}
+        bool operator != (const Modint &t) const {return v != t.v;}
+        bool operator < (const Modint &t) const {return v < t.v;}
+
         friend istream& operator >> (istream &stream, Modint &other) {
             return stream >> other.v;
         } 
@@ -77,6 +81,16 @@ namespace math {
         Modint<_MOD> C(int n, int k) {
             if (k < 0 || k > n) return 0;
             return fact[n] * ifact[k] * ifact[n - k];
+        }
+
+        /*
+            Count the number of non-negative integer solutions of:
+            x_1 + x_2 + ... + x_n = m
+
+            Tested: https://cses.fi/problemset/task/1717
+        */
+        Modint<_MOD> euler(int n, int m) {
+            return C(n + m - 1, m);
         }
     };
 }
