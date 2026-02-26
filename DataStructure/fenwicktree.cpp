@@ -7,7 +7,7 @@ Tested:
 */
 
 // Indexed from 1
-// Supports Range Update Point Get
+// Supports Point Update Range Sum
 struct FenwickTree{
     int n, lg;
     vector<int> fen;
