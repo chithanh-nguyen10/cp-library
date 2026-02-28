@@ -1,5 +1,5 @@
 /*
-Name: Line Container (Convex hull trick)
+Name: Line Container (based on kactl)
 Tested:
 - CSES 3429: https://cses.fi/problemset/task/3429
 - CSES 3430: https://cses.fi/problemset/task/3430

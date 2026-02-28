@@ -1,5 +1,5 @@
 /*
-Name: Fenwick Tree
+Name: Fenwick Tree (based on jiangly's template)
 Tested:
 - https://cses.fi/problemset/task/1648
 - https://cses.fi/problemset/task/1651
