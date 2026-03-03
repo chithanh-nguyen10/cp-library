@@ -1,3 +1,5 @@
+// Name: Modint (based on jiangly's template)
+
 template<int64_t _MOD>
 struct Modint{
     static int64_t mod;
