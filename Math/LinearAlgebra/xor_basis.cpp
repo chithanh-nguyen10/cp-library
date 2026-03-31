@@ -1,5 +1,5 @@
 /*
-Name: Xor Basis
+Name: Xor Basis (based on USACO)
 Tested:
 - https://cses.fi/problemset/task/3191
 - https://cses.fi/problemset/task/3211

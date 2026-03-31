@@ -1,5 +1,5 @@
 /*
-Name: Gauss-Jordan elimination with modulo.
+Name: Gauss-Jordan elimination with modulo (based on RR's notebook)
 Tested:
 - https://cses.fi/problemset/task/3154
 */
