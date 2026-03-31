@@ -24,6 +24,7 @@ struct FenwickTree {
     }
 
     void update(int idx, T v) {
+        assert(idx > 0);
         for (int i = idx; i <= n; i += i & -i)
             fen[i] += v;
     }
