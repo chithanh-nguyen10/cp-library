@@ -11,8 +11,8 @@ struct DSU{
     vector<int> par, sz;
  
     DSU(int n) : n(n), par(n + 5), sz(n + 5) {
-        iota(all(par), 0);
-        fill(all(sz), 1);
+        iota(par.begin(), par.end(), 0);
+        fill(sz.begin(), sz.end(), 1);
     }
  
     int findSet(int x) {
